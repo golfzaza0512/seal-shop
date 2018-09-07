@@ -1,0 +1,47 @@
+<div class="container">
+  <table id="cart" class="table table-hover table-condensed" [formGroup]="formGroup">
+    <thead>
+      <tr>
+        <th style="width:50%">Product</th>
+        <th style="width:10%">Price</th>
+        <th style="width:8%">Quantity</th>
+        <th style="width:22%" class="text-center">Subtotal</th>
+        <th style="width:10%"></th>
+      </tr>
+    </thead>
+    <tbody formArrayName="cartList">
+      <tr *ngFor="let key of cartItemKeys; let i = index">
+        <td data-th="Product">
+          <div class="row">
+            <div class="col-sm-2 hidden-xs"><img src="{{ cartItems[key].item.imageUrl }}" alt="..." class="img-responsive"
+              /></div>
+            <div class="col-sm-10">
+              <h4 class="nomargin">{{ cartItems[key].item.title }}</h4>
+              <p>{{ cartItems[key].item.detail }}</p>
+            </div>
+          </div>
+        </td>
+        <td data-th="Price">{{ cartItems[key].item.price | currency: 'THB': 'symbol-narrow' }}</td>
+        <td data-th="Quantity">
+          <input type="number" class="form-control text-center" min="1" formControlName="{{i}}">
+        </td>
+        <td data-th="Subtotal" class="text-center"> {{cartItems[key].item.price * formGroup.controls.cartList.at(i).value
+          | currency: 'THB': 'symbol-narrow' }}</td>
+        <td class="actions" data-th="">
+          <button class="btn btn-danger btn-sm" (click)="removeItem(key, i)"><i class="fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr class="visible-xs">
+        <td class="text-center"><strong>{{ totalPrice | currency: 'THB': 'symbol-narrow' }}</strong></td>
+      </tr>
+      <tr>
+        <td><a routerLink="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+        <td colspan="2" class="hidden-xs"></td>
+        <td class="hidden-xs text-center"><strong>Total {{ totalPrice | currency: 'THB': 'symbol-narrow' }}</strong></td>
+        <td><button routerLink="/" class="btn btn-success btn-block"[disabled]="!formGroup.valid" >Checkout <i class="fa fa-angle-right"></i></button></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
