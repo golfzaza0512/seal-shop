@@ -32,14 +32,14 @@ export class AppComponent {
     {
       id: "4", title: "รองเท้า",
       price: 3999,category: "รองเท้า",
-      imageUrl: "https://www.goodmorningostend.be/images/Adidas/Adidas%20ZX/Adidas%20ZX600/Adidas%20ZX600%20Running%20Shoes%20Men%20Black%20White_40.jpg",
+      imageUrl: "https://www.goodmorningostend.be/th/%E0%B8%AD%E0%B8%B2%E0%B8%94%E0%B8%B4%E0%B8%94%E0%B8%B2%E0%B8%AA%E0%B8%A3%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%97%E0%B9%89%E0%B8%B2%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%83%E0%B8%9A%E0%B8%A2%E0%B9%89%E0%B8%AD%E0%B8%99-S78621-%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B2%E0%B8%A2%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%8A%E0%B8%B2%E0%B8%A2%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3-129.jpg",
       detail: "อาดิดาสรองเท้า ทำงานผู้ชาย (สีดำสีขาว)"
     },
     {
       id: "5", title: "ถุงเท้า",
       price: 199,category: "ถุงเท้า",
       imageUrl: "https://www.adidas.co.th/static/on/demandware.static/-/Sites-adidas-products/default/dw8e932b90/zoom/AA2292_00_plp_standard.jpg",
-      detail: "ถุงเท้าสำหรับออกกำลัง"
+      detail: "ถุงเท้าสำหรับออกกำลังกาย"
     },
     {
       id: "6", title: "กระเป๋า",
