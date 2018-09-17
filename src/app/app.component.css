@@ -2,10 +2,10 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 20px;
+    width: 15px;
     height: 20px;
     border-radius: 50%;
-    background: red;
-    color: white;
+    background: #333333;
+    color: red;
     text-align: center;
   }

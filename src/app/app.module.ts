@@ -30,7 +30,8 @@ import { BgColorDirective } from './bg-color.directive';
     //   ]
     // },
       { path: "about", loadChildren: "../about/about.module#AboutModule" }
-      // { path: "contact", loadChildren: "../about/about.module#AboutModule" }
+      ,
+      { path: "contact", loadChildren: "../about/about.module#AboutModule" }
     ]),
     ReactiveFormsModule
   ],

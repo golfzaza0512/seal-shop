@@ -5,12 +5,12 @@
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <li><a class="navbar-brand" routerLink="/" class="fa fa-home"  style="font-size:50px;color:greenyellow;"><span  class="fa fa-home"  style="font-size:20px;color:greenyellow;" > </span ></a></li>
+            <li><a class="navbar-brand" routerLink="/" class="fa fa-home"  style="font-size:50px;color:greenyellow;"><span > </span ></a></li>
           </div>
           <ul class="nav navbar-nav">
-            <li><a routerLink="/about/">About</a></li>
-            <li><a routerLink="/about/contact">Contact</a></li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Select <span class="caret"></span></a>
+            <li><a routerLink="/about/Weerapol">About</a></li>
+            <li><a routerLink="/about/contact">Chicky</a></li>
+            <li class="dropdown"><a routerLink="/" class="dropdown-toggle" data-toggle="dropdown">Select <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a routerLink="/" [queryParams]="{category: 'หมวก'}">หมวก</a></li>
                 <li><a routerLink="/" [queryParams]="{category: 'เสื้อ'}">เสื้อ</a></li>
@@ -22,7 +22,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a routerLink="/cart"><span id="itemCout" class="glyphicon glyphicon-shopping-cart"  style="font-size:20px;color:greenyellow;"></span></a></li>
+            <li><a routerLink="/cart"><span id="itemCount" > {{ cartService.cout }}</span> <span class="glyphicon glyphicon-shopping-cart"  style="font-size:20px;color:	#bfbfbf;"></span></a></li>
 
           </ul>
         </div>

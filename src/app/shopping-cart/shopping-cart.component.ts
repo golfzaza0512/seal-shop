@@ -16,6 +16,7 @@ export class ShoppingCartComponent implements OnInit {
   formGroup: FormGroup;
   amountArrayConteol: FormArray;
   totalPrice: number;
+  itemCout: number;
 
   constructor(public cartService: CartService) {
     this.cartItems = cartService.getItem();
@@ -33,12 +34,33 @@ export class ShoppingCartComponent implements OnInit {
           const itemInCart = this.cartItems[itemId];
           return (amount * itemInCart.item.price) + total;
         }, 0);
-        // console.log(data);
+        // this.sum = data.cartList.reduce((total, amount, index) => {
+        //   const itemId =  this.cartItemKeys[index];
+        //   const itemInCart = this.cartItems[itemId];
+        //   // this.sum = itemInCart.item.price;
+        //   return (amount + total)  ;
+        // }, 0);
+        // console.log('sum1',this.sum);
       },
       error: (err) => { },
       complete: () => { }
     });
+
+  //   this.formGroup.valueChanges.subscribe({
+  //     next: (data) => {
+  //   this.itemCout = data.cartList.reduce((total, amount, index) => {
+  //     const itemId =  this.cartItemKeys[index];
+  //     const itemInCart = this.cartItems[itemId];
+  //     // this.sum = itemInCart.item.price;
+  //     return (amount + total)  ;
+  //   }, 0);
+  //   console.log('sum1',this.itemCout);
+  // }
+  // });
     // this.amountInput = new FormControl(1, [Validators.min(1), Validators.required]);
+    // this.yyyy = this.sum;
+    // this.yyyy = this.sum;
+    // console.log('sum2',this.itemCout);
   }
   ngOnInit() {
     this.cartItemKeys.forEach((cartItemKey) => {
