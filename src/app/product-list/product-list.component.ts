@@ -16,19 +16,26 @@ export class ProductListComponent implements OnInit {
   constructor(productService: ProductService,
     private cartService: CartService,
     private router: ActivatedRoute) {
-    this.router.queryParamMap.subscribe({
-      next: (queryParamMap: ParamMap) => {
-        if (queryParamMap.has("category")) {
-          const category = queryParamMap.get("category")
-          this.listItem = productService.itemList.filter((item) => {
-            return item.category == category
-          });
+    productService.getAll().subscribe({
+      next: (products) => {
 
-        } else {
-          this.listItem = productService.itemList
-        }
+        this.router.queryParamMap.subscribe({
+          next: (queryParamMap: ParamMap) => {
+
+            if (queryParamMap.has("category")) {
+              const category = queryParamMap.get("category")
+              this.listItem = productService.itemList.filter((item) => {
+                return item.category == category
+              });
+            } else {
+              this.listItem = products
+              // this.listItem = productService.getAll().subscribe;
+            }
+          }
+        });
       }
     });
+
     // this.listItem = productService.itemList;
 
   }

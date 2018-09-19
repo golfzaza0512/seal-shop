@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -12,6 +12,7 @@ import { BgColorDirective } from './bg-color.directive';
 @NgModule({
   declarations: [
     AppComponent,
+    
     ShoppingCartComponent,
     ProductListComponent,
     TitlePipe,
@@ -19,6 +20,7 @@ import { BgColorDirective } from './bg-color.directive';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: "", component: ProductListComponent
