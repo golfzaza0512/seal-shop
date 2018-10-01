@@ -1,8 +1,8 @@
 <router-outlet></router-outlet>
 <div class="row" *ngIf="!toogleCart">
-    <div class="col-md-4" *ngFor="let item of listItem">
+    <div class=" col-xs-4 col-sm-3 col-lg-2" *ngFor="let item of listItem">
       <div class="panelList">
-        <img height="200" src="{{ item.imageUrl }}" alt="">
+        <img height="150" src="{{ item.imageUrl }}" alt="">
         <h2>{{ item.title | title: 'Name' }}</h2>
         <h4>{{ item.price | currency: 'THB': 'symbol-narrow' | title: 'Price' }} </h4>
         <h4>{{ item.detail }} </h4>
